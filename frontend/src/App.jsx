@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import Poll from './components/Poll/Poll.jsx'
+import Poll from './pages/Poll/Poll.jsx'
 import Navbar from './components/navbar.jsx';
+import ConfessionPage from './pages/Confession.jsx';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/poll" element={<Poll />} />
+        <Route path='/confession' element={<ConfessionPage />} />
       </Routes>
     </BrowserRouter>
   )
