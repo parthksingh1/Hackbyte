@@ -1,6 +1,6 @@
-import Question from "../models/questionSchema";
+import Question from "../models/questionSchema.js";
 
-export const createAnswer = async (res, req) => {
+export const createAnswer = async (req, res) => { // Corrected order of parameters
     const { questionId } = req.params;
     const { text } = req.body;
 
@@ -18,7 +18,7 @@ export const createAnswer = async (res, req) => {
     }
 }
 
-export const upvoteAnswer = async (res, req) => {
+export const upvoteAnswer = async (req, res) => {
     const { questionId, answerId } = req.params;
 
     try {
@@ -40,7 +40,7 @@ export const upvoteAnswer = async (res, req) => {
     }
 };
 
-export const downvoteAnswer = async (res, req) => {
+export const downvoteAnswer = async (req, res) => {
     const { questionId, answerId } = req.params;
 
     try {

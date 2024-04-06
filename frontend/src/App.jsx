@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Qna from './pages/Qna.jsx'
-import Poll from './pages/Poll/Poll.jsx'
+import Poll from './pages/Poll.jsx'
 import Navbar from './components/navbar.jsx';
 import ConfessionPage from './pages/Confession/Confessionfullpage.jsx';
 import Home from './pages/Home/Home.jsx'
