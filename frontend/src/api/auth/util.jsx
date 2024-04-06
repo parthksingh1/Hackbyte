@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const checkAuth = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/isauth", {withCredentials: true});
+    const response = await axios.get("http://localhost:3001/isauth", {withCredentials: true});
     return response.data;
   } catch (error) {
     console.log("Error checking authentication status: ", error);
@@ -12,7 +12,7 @@ export const checkAuth = async () => {
 
 export const getUserProfile = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/profile", {withCredentials: true});
+    const response = await axios.get("http://localhost:3001/profile", {withCredentials: true});
     return response.data;
   } catch (error) {
     console.error("Error fetching user profile:", error);

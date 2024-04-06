@@ -25,11 +25,11 @@ const Navbar = () => {
   }, []);
 
   function onLogIn() {
-    window.location.href = "http://localhost:3000/login";
+    window.location.href = "http://localhost:3001/login";
   }
 
   function onLogOut() {
-    window.location.href = "http://localhost:3000/logout";
+    window.location.href = "http://localhost:3001/logout";
   }
 
   return (
