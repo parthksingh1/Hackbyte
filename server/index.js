@@ -1,20 +1,28 @@
 import cors from "cors";
-import { config } from "dotenv";
 import express from "express";
 import connectDB from "./DB/connect_db.js";
 import PostQroutes from "./routes/postquestionroutes.js";
+import {auth} from 'express-openid-connect';
+import dotenv from 'dotenv';
+import colors from 'colors';
 
-// Config dotenv
-config({ path: "./config/config.env" });
-
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
+const authConfig = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL, 
+};
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-app.use(auth(config));
+app.use(auth(authConfig));
 
 app.use("/api/v1", PostQroutes);
 
@@ -35,6 +43,6 @@ app.get("/profile", (req, res) => {
   res.json(profile);
 });
 
-const server = app.listen(PORT, () => {
-  console.log(`Server is running on https://localhost:${PORT}`.green.bold);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`.green.bold);
 });
