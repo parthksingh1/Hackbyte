@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import 'react-leaf-polls/dist/index.css';
 
+// eslint-disable-next-line react/prop-types
 const PollForm = ({ onPollSubmit }) => {
     const [question, setQuestion] = useState('');
     const [options, setOptions] = useState([]);

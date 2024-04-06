@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar.jsx";
 import ConfessionPage from "./pages/Confession.jsx";
 import Home from "./pages/Home.jsx";
-import Poll from "./pages/Poll/Poll.jsx";
+import Poll from "./pages/Poll.jsx";
 
 export default function App() {
   return (

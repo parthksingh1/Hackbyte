@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import 'react-leaf-polls/dist/index.css';
-import PollForm from '../../components/poll/PollForm';
-import PollDisplay from '../../components/poll/PollDisplay';
+import PollForm from '../components/poll/PollForm';
+import PollDisplay from '../components/poll/PollDisplay';
 
 
 const Poll = () => {
