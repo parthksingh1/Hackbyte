@@ -49,7 +49,7 @@ const Poll = () => {
     );
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4 px-4 py-8 bg-gray-100 rounded-md shadow-md">
+        <form onSubmit={handleSubmit} className="w-6/12 mx-auto flex flex-col space-y-4 px-4 py-8 bg-gray-100 rounded-md shadow-md">
             <h2 className="text-xl font-bold">Create Poll</h2>
             <div className="flex flex-col">
                 <label htmlFor="question" className="mb-2 text-sm">
@@ -78,12 +78,12 @@ const Poll = () => {
                         id="newOption"
                         value={newOption}
                         onChange={handleOptionChange}
-                        className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-500"
                     />
                     <button
                         type="button"
                         onClick={addOption}
-                        className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        className="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-400 focus:outline-none hover:text-black focus:ring-1 focus:ring-yellow-100"
                     >
                         Add Option
                     </button>
@@ -91,7 +91,7 @@ const Poll = () => {
             </div>
             <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-400 hover:text-black focus:outline-none focus:ring-1 focus:ring-yellow-100"
             >
                 Create Poll
             </button>
