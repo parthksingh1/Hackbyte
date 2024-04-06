@@ -31,7 +31,7 @@ export const AskquestionModal = () => {
               onClick={closeModal}
               size="sm"
               variant="outline"
-              color="secondary"
+              className="bg-slate-500 hover:bg-slate-400 text-white rounded-lg font-medium px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50"
             >
               Close
             </Button>

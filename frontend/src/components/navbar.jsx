@@ -33,22 +33,30 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-gray-200 p-4 flex items-center justify-between">
-      <div className="text-gray-800 font-bold text-xl">ShadowSpeaks</div>
+    <nav className="bg-n-8/90 p-4 flex items-center justify-between text-purple-400">
+      <div className="text-purple-800 font-bold text-xl">ShadowSpeaks</div>
 
-      <ul className="flex space-x-8 font-medium">
+      <ul className="flex gap-12">
         <li>
           <Link
             to="/"
-            className="text-lg text-gray-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
+            className="text-lg text-purple-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
           >
             Home
           </Link>
         </li>
         <li>
           <Link
+            to="/qna"
+            className="text-lg text-purple-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
+          >
+            QnA
+          </Link>
+        </li>
+        <li>
+          <Link
             to="/poll"
-            className="text-lg text-gray-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
+            className="text-lg text-purple-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
           >
             Poll
           </Link>
@@ -56,7 +64,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/confession"
-            className="text-lg text-gray-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
+            className="text-lg text-purple-800 hover:text-gray-600 hover:border-yellow-500 border-b-2 border-transparent transition duration-300"
           >
             Confession
           </Link>
@@ -65,37 +73,28 @@ const Navbar = () => {
 
       <AskquestionModal />
 
-      <div className="flex items-center space-x-4">
-        <input
-          type="text"
-          className="bg-gray-300 text-gray-800 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:shadow-md"
-          placeholder="Search..."
-        />
+      <div className="flex gap-12 items-center space-x-4">
         {isAuthenticated ? (
           <button
+            className="px-4 py-2 border-2 rounded-lg border-yellow-400 hover:scale-105 transistion-all duration-300 ease-in-out"
             onClick={onLogOut}
-            className="px-4 py-3 bg-gray-300 rounded-lg hover:bg-yellow-500 hover:text-white"
           >
             Logout
           </button>
         ) : (
           <button
+            className="px-4 py-2 border-2 rounded-lg border-yellow-400 hover:scale-105 transistion-all duration-300 ease-in-out"
             onClick={onLogIn}
-            className="px-4 py-3 bg-gray-300 rounded-lg hover:bg-yellow-500 hover:text-white"
           >
             Login
           </button>
         )}
-        <div className="w-10 h-10 overflow-hidden rounded-full">
-          {userProfile ? (
-            <img
-              src={userProfile.picture}
-              alt="User Avatar"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <AvatarIcon className="w-full h-full object-cover" />
-          )}
+        <div className="w-10 h-10 overflow-hidden rounded-full bg-gray-800">
+          <img
+            src={userProfile ? userProfile.picture : ""}
+            alt="Profile Image"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </nav>

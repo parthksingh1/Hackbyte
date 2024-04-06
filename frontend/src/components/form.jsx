@@ -30,15 +30,15 @@ const PostQuestionForm = () => {
 
   return (
     <div className="w-full p-6 bg-white rounded-md shadow-md">
-      <div className="text-2xl font-semibold mb-4">Post a Question</div>
+      <div className="text-2xl font-semibold mb-4 text-black">Post a Question</div>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="question" className="block text-sm font-medium text-gray-700">
-            Question
+          <label htmlFor="question" className="block text-sm font-medium text-gray-700 mb-2">
+            Question: 
           </label>
           <textarea
             id="question"
-            className="mt-1 p-2 block w-full border border-yellow-200 rounded-md focus:outline-none focus:ring focus:ring-gray-700"
+            className="bg-white mt-1 p-2 block w-full border border-yellow-200 rounded-md focus:outline-none focus:ring focus:ring-gray-700"
             rows="4"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}

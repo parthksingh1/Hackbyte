@@ -1,8 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar.jsx";
-import ConfessionPage from "./pages/Confession.jsx";
-import Home from "./pages/Home.jsx";
-import Poll from "./pages/Poll.jsx";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Qna from './pages/Qna.jsx'
+import Poll from './pages/Poll/Poll.jsx'
+import Navbar from './components/navbar.jsx';
+import ConfessionPage from './pages/Confession/Confessionfullpage.jsx';
+import Home from './pages/Home/Home.jsx'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/qna" element={<Qna />} />
         <Route path="/poll" element={<Poll />} />
         <Route path="/confession" element={<ConfessionPage />} />
       </Routes>
