@@ -3,7 +3,7 @@ import { ArrowUpIcon, ArrowDownIcon } from "@radix-ui/react-icons";
 const Postquestion = () => {
   return (
     <>
-      <div className="border-2 border-b-yellow-400 rounded-lg max-w-[60%] p-4 flex flex-col gap-4 shadow-lg">
+      <div className="border-2 border-b-yellow-400 rounded-lg max-w-[60%] p-4 flex flex-col gap-4 shadow-lg ">
         <div className="flex gap-4 items-center">
           <img
             className="rounded-xl w-8 h-8 border"

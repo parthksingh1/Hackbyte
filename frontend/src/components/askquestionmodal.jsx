@@ -17,7 +17,7 @@ export const AskquestionModal = () => {
     <>
       <Button
         onClick={openModal}
-        className="p-3 bg-yellow-500 hover:bg-yellow-400 rounded-lg font-medium flex gap-4 items-center "
+        className="p-3 bg-[#ADFE8E] text-purple-800 rounded-lg font-semibold flex gap-4 items-center "
       >
         Ask Question <ChevronDownIcon />
       </Button>

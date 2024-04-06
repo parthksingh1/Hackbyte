@@ -38,7 +38,7 @@ const PostQuestionForm = () => {
           </label>
           <textarea
             id="question"
-            className="bg-white mt-1 p-2 block w-full border border-yellow-200 rounded-md focus:outline-none focus:ring focus:ring-gray-700"
+            className="bg-white mt-1 p-2 block w-full border-1 border-purple-500 rounded-md focus:outline-none focus:ring focus:ring-purple-500"
             rows="4"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
@@ -48,7 +48,7 @@ const PostQuestionForm = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-4 py-2 bg-yellow-400 text-white rounded-md hover:bg-yellow-300 focus:outline-none focus:bg-yellow-400"
+            className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-500 focus:outline-none focus:bg-purple-500"
           >
             Post Question
           </button>

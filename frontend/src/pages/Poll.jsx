@@ -16,7 +16,7 @@ const Poll = () => {
 
     return (
         <>
-            <div className='border-2'>
+            <div className=''>
                 <PollForm onPollSubmit={handlePollSubmit} />
                 {createdPolls.length > 0 && <PollDisplay polls={createdPolls} />}
             </div>

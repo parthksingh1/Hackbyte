@@ -1,5 +1,5 @@
 import { AvatarIcon } from "@radix-ui/react-icons";
-import { useEffect } from "react";  
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { checkAuth, getUserProfile } from "../api/auth/util";
 import { useAuthStore } from "../store/authStore";
@@ -90,11 +90,15 @@ const Navbar = () => {
           </button>
         )}
         <div className="w-10 h-10 overflow-hidden rounded-full bg-gray-800">
-          <img
-            src={userProfile ? userProfile.picture : ""}
-            alt="Profile Image"
-            className="w-full h-full object-cover"
-          />
+          {userProfile ? (
+            <img
+              src={userProfile ? userProfile.picture : ""}
+              alt="Profile Image"
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <AvatarIcon className="w-full h-full object-cover" />
+          )}
         </div>
       </div>
     </nav>
