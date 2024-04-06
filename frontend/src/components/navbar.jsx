@@ -1,3 +1,4 @@
+import { AskquestionModal } from './askquestionmodal.jsx';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -29,6 +30,7 @@ const Navbar = () => {
         </li>
       </ul>
 
+      <AskquestionModal />
 
       <div className="flex items-center space-x-4">
         <input type="text" className="bg-gray-300 text-gray-800 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:shadow-md" placeholder="Search..." />
