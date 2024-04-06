@@ -1,5 +1,4 @@
-![ShadowSpeak Logo](![image](https://github.com/parthksingh1/Hackbyte2.0/assets/128512586/a9799079-1570-446f-994a-fb81769978f1)
-)
+![ShadowSpeak Logo](![image](https://github.com/parthksingh1/Hackbyte2.0/assets/128512586/a9799079-1570-446f-994a-fb81769978f1))
 
 # ShadowSpeak - Anonymous Forum and Social Media Platform
 
