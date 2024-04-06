@@ -1,7 +1,35 @@
+import {  useEffect } from 'react';
 import { AskquestionModal } from './askquestionmodal.jsx';
 import { Link } from 'react-router-dom';
+import {checkAuth, getUserProfile} from '../api/auth/util';
+import { useAuthStore } from '../store/authStore';
 
 const Navbar = () => {
+  const {isAuthenticated, setIsAuthenticated, setUserProfile, userProfile} = useAuthStore();
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const authStatus = await checkAuth();
+        setIsAuthenticated(authStatus);
+        const user = await getUserProfile();
+        setUserProfile(user);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  function onLogIn () {
+    window.location.href = "http://localhost:3000/login";
+  }
+
+  function onLogOut () {
+    window.location.href = "http://localhost:3000/logout";
+  }
+
   return (
     <nav className="bg-gray-200 p-4 flex items-center justify-between">
 
@@ -34,8 +62,9 @@ const Navbar = () => {
 
       <div className="flex items-center space-x-4">
         <input type="text" className="bg-gray-300 text-gray-800 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:shadow-md" placeholder="Search..." />
+        {isAuthenticated ? <button onClick={onLogOut}>Logout</button> : <button onClick={onLogIn}>Login</button>}
         <div className="w-10 h-10 overflow-hidden rounded-full bg-gray-800 mb-4">
-          <img src="path_to_your_image.jpg" alt="Profile Image" className="w-full h-full object-cover" />
+          <img src={userProfile ? userProfile.picture: ""} alt="Profile Image" className="w-full h-full object-cover" />
         </div>
       </div>
     </nav>
