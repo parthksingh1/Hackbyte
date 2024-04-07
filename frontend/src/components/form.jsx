@@ -1,32 +1,29 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useAuthStore } from '../store/authStore.jsx';
 
 const PostQuestionForm = () => {
   const [question, setQuestion] = useState('');
+  const authStore = useAuthStore();
 
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    
-    try {
-       
-        const response = await axios.post('http://localhost:5173/api/v1/postquestions',  {
-            user:  { name: 'John Doe', email: 'scscac', password: 'sdss'},
-            type: 'question', 
-            content: question, 
-            options: {} 
-        });
-        
-      
-        console.log('Question submitted:', response.data);
-        
-       
-        setQuestion('');
-    } catch (error) {
-   
-      console.error('Error submitting question:', error);
-    }
+const handleSubmit = async (e) => {
+  console.log(authStore);
+  e.preventDefault();
+
+  try {
+    const response = await axios.post('http://localhost:3001/api/v1/postquestions', {
+      userId: authStore.userProfile.sid,
+      text: question,
+      answers: [],
+    });
+
+    console.log('Question submitted:', response.data);
+
     setQuestion('');
-  };
+  } catch (error) {
+    console.error('Error submitting question:', error);
+  }
+};
 
   return (
     <div className="w-full p-6 bg-white rounded-md shadow-md">
@@ -34,11 +31,11 @@ const PostQuestionForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="question" className="block text-sm font-medium text-gray-700 mb-2">
-            Question: 
+            Question:
           </label>
           <textarea
             id="question"
-            className="bg-white mt-1 p-2 block w-full border-1 border-purple-500 rounded-md focus:outline-none focus:ring focus:ring-purple-500"
+            className="bg-white text-black mt-1 p-2 block w-full border-1 border-purple-500 rounded-md focus:outline-none focus:ring focus:ring-purple-500"
             rows="4"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
@@ -48,6 +45,7 @@ const PostQuestionForm = () => {
         <div className="flex justify-end">
           <button
             type="submit"
+            onSubmit={handleSubmit}
             className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-500 focus:outline-none focus:bg-purple-500"
           >
             Post Question
