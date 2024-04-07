@@ -55,7 +55,7 @@ import {
     {
       id: "0",
       title: "Ask anything",
-      text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+      text: "Foster open, anonymous dialogue through questioning and answering, promoting uninhibited expression and genuine interaction.",
       backgroundUrl: "./src/assets/benefits/card-1.svg",
       iconUrl: benefitIcon1,
       imageUrl: benefitImage2,
@@ -63,7 +63,7 @@ import {
     {
       id: "1",
       title: "Improve everyday",
-      text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+      text: "Craft intriguing polls anonymously to gather community insights and engage in collaborative decision-making through poll participation.",
       backgroundUrl: "./src/assets/benefits/card-2.svg",
       iconUrl: benefitIcon2,
       imageUrl: benefitImage2,
@@ -72,7 +72,7 @@ import {
     {
       id: "2",
       title: "Connect everywhere",
-      text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
+      text: "Confess your feelings openly, without fear or hesitation, in a welcoming, judgment-free environment of complete anonymity.",
       backgroundUrl: "./src/assets/benefits/card-3.svg",
       iconUrl: benefitIcon3,
       imageUrl: benefitImage2,
