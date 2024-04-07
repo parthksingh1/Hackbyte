@@ -37,8 +37,6 @@ const Qna = () => {
             title={question.title} 
             content={question.text}
             createdAt={question.createdAt}
-            upvotesCount={question.upvotesCount}
-            downvotesCount={question.downvotesCount}
           />
         ))}
       </div>

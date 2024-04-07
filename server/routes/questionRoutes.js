@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { postQuestion, getAllQuestions } from "../controllers/questionController.js";
-import { createAnswer, upvoteAnswer, downvoteAnswer } from "./answerController.js";
+import { createAnswer, upvoteAnswer, downvoteAnswer } from "../controllers/answerController.js";
 
 const QuestionRoutes = Router();
 QuestionRoutes.post('/postquestions', postQuestion);

@@ -37,7 +37,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
            Anonymous Forum and Social Media Platform
           </p>
-          <Button href="http://localhost:3000/login" white>
+          <Button href="http://localhost:3001/login" white>
             Get started
           </Button>
         </div>
