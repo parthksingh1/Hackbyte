@@ -3,6 +3,7 @@ import Question from "../models/questionSchema.js";
 
 // @route POST /api/v1/questions
 export const postQuestion = async (req, res) => {
+  console.log(req.body);
   const {userId, text} = req.body;
   try {
     const question = await Question.create({userId, text});
