@@ -31,7 +31,7 @@ const handleSubmit = async (e) => {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="question" className="block text-sm font-medium text-gray-700 mb-2">
-            Question: 
+            Question:
           </label>
           <textarea
             id="question"
@@ -45,6 +45,7 @@ const handleSubmit = async (e) => {
         <div className="flex justify-end">
           <button
             type="submit"
+            onSubmit={handleSubmit}
             className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-500 focus:outline-none focus:bg-purple-500"
           >
             Post Question
